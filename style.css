@@ -4,6 +4,8 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   list-style: none;
   text-decoration: none;
+  color: #4d4d4d;
+  outline: none;
 }
 
 body {
@@ -15,7 +17,7 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-family: "Akaya Kanadaka", cursive;
   letter-spacing: 6px;
-  font-size: 62px;
+  font-size: 5vw;
   color: #d69dce;
   line-height: 150px;
 }
@@ -25,46 +27,52 @@ body {
   width: 80%;
 }
 
-header {
+#main {
+  display: block;
   margin-top: 25px;
   margin-bottom: 15px;
-  height: 120px;
+  height: 20vh;
   background-color: rgba(255, 255, 255, 0.45);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   border-radius: 10px;
 }
-header h1 {
-  position: absolute;
+#main h1 {
   top: 15px;
-  line-height: 120px;
-  margin-left: 76px;
+  margin-left: 5%;
+  float: left;
 }
-header ul li {
-  display: inline-block;
+#main ul {
+  float: right;
   line-height: 120px;
+}
+#main ul:last-child {
+  padding-right: 3%;
+  margin: 15px;
+}
+#main ul li {
+  display: inline-block;
   padding: 0px 10px;
 }
-header ul li:first-child {
-  margin-left: 55%;
-}
-header ul li a {
+#main ul li a {
   display: block;
   color: rgba(51, 51, 51, 0.8);
   font-size: 22px;
-  margin: 10px 45px;
+  margin: 10px 15px;
 }
 
 section {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 240px;
+  width: 23%;
+  height: 25%;
   padding: 10px;
   margin: 22px;
   background: rgba(255, 255, 255, 0.35);
@@ -73,6 +81,7 @@ section {
           backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: 150ms;
 }
 
 .product-image {
@@ -90,17 +99,18 @@ section {
   margin: 4px 0px;
 }
 .product__image {
+  display: block;
   margin: 0px auto;
+  width: auto;
 }
 .product__description {
   height: 100%;
   margin-top: 10px;
 }
 .product__button {
-  height: 40px;
-  width: 90px;
+  padding: 8px;
   margin: 0px auto;
-  margin-top: 5px;
+  margin-top: 15px;
   font-weight: bold;
 }
 
@@ -112,7 +122,7 @@ section {
   display: none;
   position: absolute;
   height: auto;
-  width: 25%;
+  width: 20rem;
   right: 0px;
   border-radius: 19px 0px 0px 19px;
   background-color: #f4d4f5;
@@ -145,27 +155,206 @@ section {
 }
 
 .yourBasket {
-  display: flex;
-  flex-direction: row;
-  height: 199px;
-  float: left;
+  display: inline-block;
+  height: auto;
 }
 .yourBasket .product__image {
-  border-radius: 155px;
-  transform: scale(0.4);
-  margin: 0px;
-  margin-left: -10px;
+  display: block;
+  transition: 150ms;
+  transform: scale(0.8);
+  border-radius: 50px;
+  margin: 0px auto;
 }
 .yourBasket .product__name {
   margin: auto;
-  margin-left: -45px;
+  padding: 10px;
+  text-align: center;
 }
 .yourBasket .product__price {
   margin: auto;
-  padding: 5px;
+  padding: 20px;
 }
 .yourBasket .product__delete {
-  height: 30px;
+  display: block;
   width: 20px;
+  padding: 0px 20px;
   margin: auto;
+  margin-right: 7%;
+  text-align: center;
+  line-height: 45px;
+  background-color: #eeeeee;
+  box-shadow: 2px 2px 5px #bbbbbb;
+}
+
+.yourBasket:hover > .product__image {
+  transform: scale(0.85);
+}
+
+.container:hover {
+  transform: scale(1.1);
+}
+
+#score {
+  display: none;
+  position: relative;
+  font-size: 12px;
+  top: 14px;
+  left: -10px;
+  width: 16px;
+  height: 12px;
+  font-weight: bolder;
+  margin-left: -20px;
+  margin-top: -20px;
+  color: white;
+  padding: 3px 5px;
+  background-color: #595855;
+  border-radius: 350px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.slide__button {
+  padding: 8px;
+  margin: 0px auto;
+  width: 35%;
+  margin-bottom: 7px;
+}
+
+.trio {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+footer {
+  -webkit-backdrop-filter: blur(0.4);
+          backdrop-filter: blur(0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.18);
+  padding: 20px;
+  color: #4d4d4d;
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+footer h3 {
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  #h1 {
+    font-size: 8vw;
+  }
+
+  .container {
+    width: 30vw;
+    margin: auto;
+    margin: 25px 20px;
+  }
+}
+@media only screen and (max-width: 623px) {
+  #h1 {
+    font-size: 8vw;
+  }
+
+  .container {
+    width: 35%;
+    margin: auto;
+    margin: 25px 20px;
+  }
+}
+@media only screen and (max-width: 623px) {
+  #h1 {
+    font-size: 8vw;
+  }
+
+  .container {
+    width: 30%;
+    margin: auto;
+    margin: 25px 20px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #h1 {
+    font-size: 8vw;
+    width: 100%;
+  }
+
+  ul {
+    margin: 0px;
+    height: 40px;
+  }
+  ul li {
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
+  }
+  ul li a {
+    height: 40px;
+  }
+
+  .container {
+    width: 80%;
+    margin: auto;
+    margin: 25px 20px;
+  }
+}
+@media only screen and (max-width: 291px) {
+  #main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #h1 {
+    font-size: 10vw;
+    margin-top: -50px;
+  }
+
+  #div_ul {
+    position: absolute;
+    transform: scale(0.7);
+    top: 50px;
+  }
+}
+@media only screen and (max-height: 529px) {
+  #main {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+    border-radius: 10px;
+    height: 120px;
+  }
+
+  ul {
+    position: absolute;
+    left: 60%;
+  }
+}
+@media only screen and (max-width: 1173px) {
+  .slide {
+    display: block;
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  .yourBasket {
+    display: flex;
+    flex-direction: row;
+    transform: scale(0.8);
+  }
 }/*# sourceMappingURL=style.css.map */

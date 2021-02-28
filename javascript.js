@@ -4,14 +4,12 @@ import { Item } from "./item.js";
 
 window.onload = function(){
 
-  
-
   let basket = document.getElementById("basket");
   let slide = document.querySelector(".slide");
- 
- 
+
   // events 
-  basket.addEventListener("click", displayBasket);
+  basket.addEventListener("click", displayBasket );
+  slide.addEventListener("mouseleave", displayBasket )
  
  // main functions, uses the objectand its method to post on the web an item.
   function fillProduct(url, name, price, description){
@@ -36,12 +34,10 @@ window.onload = function(){
   fillProduct("./img/chococake.jpg", "Cake Choco" ,"5,00","Pieza de chocolate");
   
 
-
   // on click the slide is displayed or hidden, depending on its previous state.
 function displayBasket(){
   slide.style.display =  slide.style.display === "none"  ? "block" : "none";          
 }
-
 
 
 }
