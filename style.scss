@@ -354,18 +354,32 @@ footer {
 @media only screen and (max-width:1173px){
 
     .slide{
-        display: block;
+        display: flex;
         position: relative;
-        display:flex;
-        width: 100%;        
+        width: 100%; 
+		
+		.slide__title{
+			display: none;
+		}
+		.slide__button{
+			margin-top: 18px;
+		}
     }
     .yourBasket{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+
         transform: scale(0.8);
 
 		.product__image{
 			width: 100%;
+			margin: auto;
+			clear: both;
+			
+		}
+		.trio{
+			width: 100%;
+			
 		}
     }
 	

@@ -88,7 +88,11 @@ export class Item{
     let trio = document.createElement("div");
     trio.classList.add("trio");
 
-    yourBasket.appendChild(cloneImage);
+    let imgIMG = document.createElement("div");
+    imgIMG.classList.add("image-slided")
+    imgIMG.appendChild(cloneImage)
+
+    yourBasket.appendChild(imgIMG);
     trio.appendChild(cloneName);
     trio.appendChild(clonePrice);
     trio.appendChild(deletePurchase);

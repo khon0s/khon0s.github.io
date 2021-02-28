@@ -346,18 +346,28 @@ footer h3 {
 }
 @media only screen and (max-width: 1173px) {
   .slide {
-    display: block;
-    position: relative;
     display: flex;
+    position: relative;
     width: 100%;
+  }
+  .slide .slide__title {
+    display: none;
+  }
+  .slide .slide__button {
+    margin-top: 18px;
   }
 
   .yourBasket {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     transform: scale(0.8);
   }
   .yourBasket .product__image {
+    width: 100%;
+    margin: auto;
+    clear: both;
+  }
+  .yourBasket .trio {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
