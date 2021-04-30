@@ -122,6 +122,7 @@ section {
 	background-color: #f4d4f5;
 	font-family: cursive;
 	border: 2px solid white;
+	z-index: 99;
 
 	&__title {
 		text-align: center;
@@ -151,7 +152,6 @@ section {
 
 .yourBasket {
 	display: inline-block;
-
 	height: auto;
 
 	.product__image {
@@ -355,8 +355,9 @@ footer {
 
     .slide{
         display: flex;
-        position: relative;
+        position: absolute;
         width: 100%; 
+		
 		
 		.slide__title{
 			display: none;
@@ -383,4 +384,29 @@ footer {
 		}
     }
 	
+}
+
+
+// INFO PAGE
+
+.info_title{
+	backdrop-filter: blur(0.4);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(4px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	background-color: rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    color: rgb(77, 77, 77);
+    width: 50%;
+    margin: auto;
+
+H2{
+	text-align: center;
+}
+}
+
+.info_img{
+	margin: 20px;
+	border-radius: 5px;
 }

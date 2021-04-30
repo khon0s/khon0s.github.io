@@ -9,7 +9,6 @@ window.onload = function(){
 
   // events 
   basket.addEventListener("click", displayBasket );
-  slide.addEventListener("mouseleave", displayBasket )
  
  // main functions, uses the objectand its method to post on the web an item.
   function fillProduct(url, name, price, description){
