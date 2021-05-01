@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="./contacto.js" defer ></script>
+
+      <!-- email.js -->
+      <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+      </script>
+      <script type="text/javascript">
+          (function() {
+          emailjs.init("user_zAmAptjDrTTWlR6ZPNzBV");
+          })();
+          </script>
+    
+</head>
+<body>
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW377NG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+<div class="wrapper" >
+
+<header>
+    <div id="main">
+    <div>
+        <a href="index.html">
+            <h1 id="h1"> KOLOVARE </h1>
+                </a>
+   </div>
+    <div id="div_ul">
+        <ul>
+            <li> <a href="info.html">Info</a> </li>
+            <li> <a href="contacto.html">Contacto</a> </li>
+             <li id="basket">    <span class="material-icons"> <div id="score" ></div>
+                 shopping_basket
+                 </span> </a> </li>
+             
+         </ul>
+     </div>
+     <!-- div main -->
+    </div>
+</header>
+<div class="slide">
+    <h2 class="slide__title">Tu cesta</h2>
+    <h3 class="slide__total" >La cesta está vacía</h3>
+    <button class="slide__button" >COMPRAR</button>
+   
+</div>
+<section>
+
+ 
+</section>
+<!-- Start  -->
+
+<div class="cover">
+
+    <h1>Contacta con <br> KOLOVARE</h1>
+  
+ 
+    <form id="myForms" >
+     <input type="text" id="from_name" placeholder="Nombre" required autocomplete="off" >
+     <input type="text" id="email" placeholder="Email" required autocomplete="off" >
+     <label for="tel" > <strong> Opcional</strong>
+     <input name="tel" id="tel"  type="text" placeholder="Teléfono" autocomplete="off" >  </label>
+     <textarea name="text_a" id="text_area"  cols="60" rows="15" placeholder="Su mensaje" required autocomplete="off" >
+     </textarea>
+     <button id="btn" >Enviar</button>
+ 
+    </form>
+ 
+    <div id="return_div" >
+     <p id="return" > <a href="./index.html"> Volver atrás</a></p>
+ </div>
+ 
+ </div>
+
+<div id="clearfix" ></div>
+<!-- end -->
+<footer >
+    <h3>Crafted by Néstor Almarza</h3>
+</footer>
+
+
+<!-- End wrapper -->
+</div>
+
+<style>
+    html{
+       
+        background-size: cover;
+    }
+    body{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0px;
+        text-decoration: none;
+    }
+    img{
+        width: 105%;
+        height: 100%;
+        
+    }
+    #from_name, #email, #tel{
+        padding: 5px;
+    }
+    #text_area{
+        padding: 5px 0px;
+    }
+    h1{
+        margin-left: 5%;
+        font-size: 5vw;
+    }
+   #myForms{
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      margin-left: 8%;
+      float: left;
+   }
+   form > input, label, textarea, button{
+       margin-top: 10px;
+   }
+   form > input, label, button{
+       width: 50%;
+   }
+   h2{
+       
+       background-color: rgb(221, 217, 217);
+       width: 20%;
+   }
+
+   #btn{
+       background-color: #f8cdf2;
+   }
+
+   #return{
+     
+     
+       height: 5%;
+       margin-top: auto;
+       line-height: 5vh;
+       font-size: 2vw;
+       margin: auto;
+       text-align: center;
+       padding: 5px;
+       text-decoration: none;
+       background-color: #f8cdf2;
+float: left;
+width: 20%;
+text-align: center;
+line-height: 10vh;
+box-shadow: 2px 2px 5px #c0b4a9 inset;
+cursor: pointer;
+       
+   }
+   a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+   }
+
+   #clearfix{
+       float: none;
+       clear: both;
+   }
+
+   @media (max-width: 500px){
+       h1{
+           font-size: 10vw;
+       }
+       #myForms{
+        width: 90%;
+       }
+
+       .cover{
+           width: 90%;
+       }
+    form > input, label, button{
+       width: 100%;
+   }
+   #text_area{
+       width: 100%;
+   }
+  
+   #return{
+       margin: 20px 41%;
+       width: 20%;
+       height: 5%;
+       font-size: 4vw;
+       padding: 5px;
+       line-height: 6vw;
+    
+
+   }
+  
+   }
+
+</style>
+
+
+</body>
+</html>
