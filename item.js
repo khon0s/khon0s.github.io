@@ -25,15 +25,8 @@ export class Item{
   product_button.classList.add("product__button");
   product_button.innerHTML= "Añadir";
   product_button.addEventListener("click", addTrolley);
-  product_button.addEventListener("click", displayBasket);
+ 
 
-// this function displays the basket when a product is added
-  function displayBasket(e){
-      e.preventDefault();
-      let slide = document.querySelector(".slide");
-      slide.style.display =  slide.style.display === "none"  ? "block" : "block" ;  
-      
-  }
 
   product_name.innerHTML= this.name ;
   product_price.innerHTML= this.price+" €";
@@ -75,6 +68,7 @@ export class Item{
 
     let slide = document.querySelector(".slide");
     let cloneImage = product_image.cloneNode(true);
+     cloneImage.style.width = "25%" ;
     let cloneName = product_name.cloneNode(true);
     let clonePrice = product_price.cloneNode(true);
   
@@ -89,14 +83,13 @@ export class Item{
     trio.classList.add("trio");
 
     let imgIMG = document.createElement("div");
-    imgIMG.classList.add("image-slided")
-    imgIMG.appendChild(cloneImage)
 
     yourBasket.appendChild(imgIMG);
+      trio.appendChild( cloneImage );
     trio.appendChild(cloneName);
     trio.appendChild(clonePrice);
     trio.appendChild(deletePurchase);
-
+  
     yourBasket.appendChild(trio);
 
     slide.appendChild(yourBasket);

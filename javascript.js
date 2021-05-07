@@ -2,13 +2,15 @@
 import { Item } from "./item.js";
 
 
-window.onload = function(){
+
 
   let basket = document.getElementById("basket");
   let slide = document.querySelector(".slide");
+  let slide__del = document.querySelector(".slide__del");
 
   // events 
   basket.addEventListener("click", displayBasket );
+  slide__del.addEventListener("click", displayBasket );
  
  // main functions, uses the objectand its method to post on the web an item.
   function fillProduct(url, name, price, description){
@@ -38,5 +40,8 @@ function displayBasket(){
   slide.style.display =  slide.style.display === "none"  ? "block" : "none";          
 }
 
+//displayBasket()
 
-}
+
+
+

@@ -155,14 +155,20 @@ section {
 }
 
 .slide {
-	display: block;
-	display: none;
-	position: relative;
+	
+    display: block;
+	display:none ;
+	margin: auto;
+	position: absolute;
+	left: 10%;
+	z-index: 99;
 	border-radius: 19px 0px 0px 19px;
 	background-color: #f4d4f5;
 	font-family: cursive;
 	border: 2px solid white;
-	
+	margin-top: 15%;
+	width: 80%;
+	height: auto;
 	
 
 	&__title {
@@ -258,6 +264,17 @@ section {
 	margin: 0px auto;
 	width: 35%;
 	margin-bottom: 7px;
+}
+.slide__del {
+	width: 10%;
+	height: 15%;
+	margin-bottom: 7px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 5px #bbbbbb;
+	text-align: center;
+	font-weight: bolder;
+	margin-top: 8px;
+	margin-left: 8px;
 }
 
 .trio {
@@ -380,7 +397,8 @@ footer {
 @media only screen and (max-width:1173px){
 
     .slide{
-        display: flex;
+		display: flex;
+        display: none;
 		
 		.slide__title{
 			display: none;
