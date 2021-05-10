@@ -1,9 +1,6 @@
 'use sctrict'
 import { Item } from "./item.js";
 
-
-
-
   let basket = document.getElementById("basket");
   let slide = document.querySelector(".slide");
   let slide__del = document.querySelector(".slide__del");
@@ -40,7 +37,7 @@ function displayBasket(){
   slide.style.display =  slide.style.display === "none"  ? "block" : "none";          
 }
 
-//displayBasket()
+
 
 
 

@@ -58,6 +58,16 @@ export class Item{
   function addTrolley(e){
     e.preventDefault();
 
+    window.dataLayer = window.dataLayer || []; 
+    window.dataLayer.push({ 
+     'event': 'addToCart', 
+     'products': [{
+            'name': this.parentNode.querySelector(".product__name").innerText   ,
+            'price': this.parentNode.querySelector(".product__price").innerText 
+          }]
+    });
+    
+
     let yourBasket = document.createElement("div");
     yourBasket.classList.add("yourBasket");
 
