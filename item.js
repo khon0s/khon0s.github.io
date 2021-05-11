@@ -59,12 +59,13 @@ export class Item{
     e.preventDefault();
 
     window.dataLayer = window.dataLayer || []; 
+    dataLayer.push({ products: null }); 
     window.dataLayer.push({ 
      'event': 'addToCart', 
-     'products': [{
+     'products': {
             'name': this.parentNode.querySelector(".product__name").innerText   ,
             'price': this.parentNode.querySelector(".product__price").innerText 
-          }]
+          }
     });
     
 
