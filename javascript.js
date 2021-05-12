@@ -87,10 +87,14 @@ dataLayer.push({ ecommerce: null });
 window.dataLayer.push({ 
   'event': 'purchase', 
   'ecommerce': {
-   'items': [{
+    "actionField": {
+      "id": parseInt(Math.random()*10000)
+    },
+   'items': {
      'item_name': allNames[i], 
      'price': allPrices[i] ,
-   }]
+     "quantity": 1
+   }
  }
 });
 }

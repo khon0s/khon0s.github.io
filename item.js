@@ -68,10 +68,10 @@ export class Item{
     window.dataLayer.push({ 
      'event': 'add_To_Cart', 
      'ecommerce': {
-      'items': [{
+      'items': {
         'item_name': this.parentNode.querySelector(".product__name").innerText, 
         'price': this.parentNode.querySelector(".product__price").innerText,
-      }]
+      }
     }
     });
 
@@ -125,10 +125,10 @@ export class Item{
     window.dataLayer.push({ 
      'event': 'remove_From_Cart', 
      'ecommerce': {
-      'items': [{
+      'items': {
         'item_name': this.parentElement.querySelector(".product__name").innerText , 
         'price': this.parentNode.querySelector(".product__price").innerText,
-      }]
+      }
     }
     });
             
