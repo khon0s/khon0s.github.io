@@ -1,6 +1,9 @@
-let bigPP = [] ;
-let total = document.querySelector(".slide__total");
-let totality = 0 ;
+
+       export  let totality = 0 ;
+       export let bigPP = [] ;
+       export  let total = document.querySelector(".slide__total");
+
+     
 
 export class Item{
     constructor(url, name, price, description){
@@ -8,8 +11,10 @@ export class Item{
         this.price = price;
         this.description = description;
         this.url = url;
+        
     }
    post(){
+
    // here the CONTAINER of the product is created along with its children.
   let container = document.createElement("DIV");
   container.classList.add("container");
@@ -59,15 +64,16 @@ export class Item{
     e.preventDefault();
 
     window.dataLayer = window.dataLayer || []; 
-    dataLayer.push({ products: null }); 
+    dataLayer.push({ ecommerce: null }); 
     window.dataLayer.push({ 
-     'event': 'addToCart', 
-     'products': {
-            'name': this.parentNode.querySelector(".product__name").innerText   ,
-            'price': this.parentNode.querySelector(".product__price").innerText 
-          }
+     'event': 'add_To_Cart', 
+     'ecommerce': {
+      'items': [{
+        'item_name': this.parentNode.querySelector(".product__name").innerText, 
+        'price': this.parentNode.querySelector(".product__price").innerText,
+      }]
+    }
     });
-    
 
     let yourBasket = document.createElement("div");
     yourBasket.classList.add("yourBasket");
@@ -113,6 +119,18 @@ export class Item{
     })()
 
       function deletion(e){
+
+        window.dataLayer = window.dataLayer || []; 
+    dataLayer.push({ ecommerce: null }); 
+    window.dataLayer.push({ 
+     'event': 'remove_From_Cart', 
+     'ecommerce': {
+      'items': [{
+        'item_name': this.parentElement.querySelector(".product__name").innerText , 
+        'price': this.parentNode.querySelector(".product__price").innerText,
+      }]
+    }
+    });
             
             // thie block refreshes downwards the total price .
            let removePP = this.parentElement.querySelector(".product__price").innerHTML ;
@@ -136,6 +154,7 @@ export class Item{
    }
          
     }
-
+    
     
 }
+

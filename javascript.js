@@ -1,13 +1,17 @@
 'use sctrict'
 import { Item } from "./item.js";
+import { bigPP } from "./item.js";
+import { total, totality } from "./item.js";
 
   let basket = document.getElementById("basket");
   let slide = document.querySelector(".slide");
   let slide__del = document.querySelector(".slide__del");
+  let slide__button = document.querySelector(".slide__button");
 
   // events 
   basket.addEventListener("click", displayBasket );
   slide__del.addEventListener("click", displayBasket );
+  slide__button.addEventListener("click", checkOut );
  
  // main functions, uses the objectand its method to post on the web an item.
   function fillProduct(url, name, price, description){
@@ -35,6 +39,68 @@ import { Item } from "./item.js";
   // on click the slide is displayed or hidden, depending on its previous state.
 function displayBasket(){
   slide.style.display =  slide.style.display === "none"  ? "block" : "none";          
+}
+
+ // function to refresh the total price .
+ function refreshPrice(){
+
+  function getSum(totality, n){
+    return totality + n 
+  }
+  let y = bigPP.map( n =>  parseFloat(n.replace( ",", "." ), 1000)).reduce( getSum, 0 ).toFixed(2);
+  total.innerHTML= (y.toString().replace(".",",")) +" €" ;
+}
+
+
+// function to buy products added on the basket(slide). GTM
+
+function checkOut(e){
+e.preventDefault();
+
+  let allNames = [];
+  let allPrices = [];
+
+  let pName = this.parentNode.querySelectorAll(".product__name") ;
+  let pPrice = this.parentNode.querySelectorAll(".product__price") ;
+
+  if( pName.length < 1  ) return console.log("Bascket is Empty")
+
+    for( let i = 0; i < pName.length ; i++ ){
+      allNames.push(pName[i].innerText )
+    }
+
+    for( let i = 0; i < pPrice.length ; i++ ){
+
+      let index = bigPP.indexOf(pPrice[i]) ;
+      bigPP.splice(index, 1) ;
+      refreshPrice()
+
+     let numPrice =  parseFloat(pPrice[i].innerText.replace("," , ".").split(" ").shift()).toFixed(2) 
+  
+     allPrices.push(numPrice)
+    }
+
+for( let i = 0 ; i < allNames.length ; i++ ){
+
+window.dataLayer = window.dataLayer || []; 
+dataLayer.push({ ecommerce: null }); 
+window.dataLayer.push({ 
+  'event': 'purchase', 
+  'ecommerce': {
+   'items': [{
+     'item_name': allNames[i], 
+     'price': allPrices[i] ,
+   }]
+ }
+});
+}
+
+let clearing = document.querySelectorAll(".yourBasket")
+   clearing.forEach( e => e.remove() )
+
+   // send to noIndex page .html /thanks/
+   location.href = "https://www.kolovare.com/gracias.html";
+
 }
 
 
