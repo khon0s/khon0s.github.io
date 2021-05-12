@@ -24,15 +24,26 @@ function sendEmail(params){
         message: document.getElementById("text_area").value 
     };
 
+
+   window.dataLayer = window.dataLayer || []; 
+dataLayer.push({  message: null }); 
+window.dataLayer.push({ 
+  'event': 'generate_lead', 
+    "message": {
+      "status": "enviado"
+    }
+});
+
+console.log("eviando a enviado.html")
+
     emailjs.send("service_8ex49ns","template_z2gup85", tempParams) 
     .then( function(res){
         console.log("success", res.status);
     } )
-
-    console.log("eviando a recivido.html")
-
-     // send to noIndex page .html /enviado/
-  location.href = "https://www.kolovare.com/enviado.html";
+    .then(function(){
+        location.href = "https://www.kolovare.com/enviado.html";
+    })
+   
 }
 
 
