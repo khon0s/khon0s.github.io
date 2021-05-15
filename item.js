@@ -18,11 +18,11 @@ export class Item{
    // here the CONTAINER of the product is created along with its children.
   let container = document.createElement("DIV");
   container.classList.add("container");
-  let product_name = document.createElement("h4");
+  let product_name = document.createElement("h2");
   product_name.classList.add("product__name");
   let product_price = document.createElement("p");
   product_price.classList.add("product__price");
-  let product_description = document.createElement("P");
+  let product_description = document.createElement("p");
   product_description.classList.add("product__description")
   let product_image = document.createElement("IMG");
   product_image.classList.add("product__image");
@@ -38,6 +38,8 @@ export class Item{
   product_description.innerHTML= this.description;
   product_image.src= this.url ;
   product_image.style.width= "98%";
+
+  product_image.setAttribute("alt", this.name   )
 
   container.appendChild(product_image);
   container.appendChild(product_name);
