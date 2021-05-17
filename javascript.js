@@ -75,7 +75,8 @@ e.preventDefault();
       bigPP.splice(index, 1) ;
       refreshPrice()
 
-     let numPrice =  parseFloat(pPrice[i].innerText.replace("," , ".").split(" ").shift()).toFixed(2) 
+     let numPrice =  parseFloat(pPrice[i].innerText.replace("," ,
+      ".").split(" ").shift()).toFixed(2) 
   
      allPrices.push(numPrice)
     }
